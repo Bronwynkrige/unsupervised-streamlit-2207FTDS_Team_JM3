@@ -54,7 +54,7 @@ def main():
     if page_selection == "Recommender System":
         # Header contents
         st.write('# Movie Recommender Engine')
-        st.write('### Connecting you to the stars')
+        st.write('### EXPLORE Data Science Academy Unsupervised Predict')
         st.image('resources/imgs/Image_header.png',use_column_width=True)
         # Recommender System algorithm selection
         sys = st.radio("Select an algorithm",
@@ -109,34 +109,34 @@ def main():
                    right methods to extract valuable insights as well as the right methods to judge the\
                    performance of our models properly.")
 
-    # if page_selection == "Movie selector":
-    #     st.subheader("Movie Filter")
+    if page_selection == "Movie selector":
+        st.subheader("Movie Filter")
 
-    #     st.write("This section is based of you using the presented filter base to generate a list of movies:")               
-    #     image = "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80.open('sunrise.jpg')"
-    #     st.image(image, caption='Sunrise by the mountains')
+        st.write("This section is based of you using the presented filter base to generate a list of movies:")               
+        image = "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80.open('sunrise.jpg')"
+        st.image(image, caption='Sunrise by the mountains')
 
 
-    #     st.write("Please select your favourite genres: ")
-    #     selected_genres = st.multiselect(
-    #       'Please select your favourite genres:',
-    #       ['action','adventure','comedy','drama','fantasy','horror','musicals','mystery'])
+        st.write("Please select your favourite genres: ")
+        selected_genres = st.multiselect(
+          'Please select your favourite genres:',
+          ['action','adventure','comedy','drama','fantasy','horror','musicals','mystery'])
             
             
         
 
-    #     st.write('You selected:', selected_genres)
+        st.write('You selected:', selected_genres)
 
 
-    #     st.write("Please select the desired length of the movie: ") ## I would have to add the Movie.csv
-    #     st.write("Please select the desired movie ratings : ")
+        st.write("Please select the desired length of the movie: ") ## I would have to add the Movie.csv
+        st.write("Please select the desired movie ratings : ")
 
 
 
-    #     if st.button('Generate'):
-    #         st.write('Why hello there')
-    #     else:
-    #         st.write('Please try again')
+        if st.button('Generate'):
+            st.write('Why hello there')
+        else:
+            st.write('Please try again')
 
 
 

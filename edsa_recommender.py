@@ -215,12 +215,12 @@ def main():
 
         add_bg_from_url() 
 
-        st.write("This section is based of you using the presented filter base to generate a list of movies:")               
-        movie_gallery = "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80.open('sunrise.jpg')"
-        st.image(movie_gallery, caption='movie gallery')
-
-
+        
         st.title("About us")
+        
+        st.image('resources/imgs/about.jpg',use_column_width=True)
+
+
 
         
         def add_bg_from_url():
@@ -273,7 +273,7 @@ def main():
         with left_column:
             st.markdown(contact_form, unsafe_allow_html=True)
         with right_column:
-            st.empty()
+             st.image('resources/imgs/contact.gif',use_column_width=True)
 
 def local_css(file_name):
     with open(file_name) as f:

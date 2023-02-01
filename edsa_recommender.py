@@ -119,12 +119,18 @@ def main():
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
     if page_selection == "Why Starlink":
         st.title("Why Starlink")
-        st.write ("Starlink approaches problems in a systematic manner, carefully executing each step\
-                   along the way in  order to extract the maximum amount of information from data.our\
-                   team uses various statistical methods and technological tools used to make sense of\
-                   and model data. Our employees boast domain knowledge that makes it easy to apply the\
-                   right methods to extract valuable insights as well as the right methods to judge the\
-                   performance of our models properly.")
+        
+        left_col, right_col = st.columns((3,1))
+        with left_col:
+            st.write ("Starlink approaches problems in a systematic manner, carefully executing each step\
+                    along the way in  order to extract the maximum amount of information from data.our\
+                    team uses various statistical methods and technological tools used to make sense of\
+                    and model data. Our employees boast domain knowledge that makes it easy to apply the\
+                    right methods to extract valuable insights as well as the right methods to judge the\
+                    performance of our models properly.")
+            
+        with right_col:
+            st.image('resources/imgs/why.png',use_column_width=True)
 
     if page_selection == "Movie selector":
 

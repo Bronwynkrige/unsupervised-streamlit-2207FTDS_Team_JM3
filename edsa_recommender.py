@@ -43,6 +43,23 @@ title_list = load_movie_titles('resources/data/movies.csv')
 # App declaration
 def main():
 
+    def add_bg_from_url(): ## The main background added
+
+        st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://pixabay.com/illustrations/north-star-stars-night-night-sky-2869817/");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+    add_bg_from_url()  
+
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
     page_options = ["Recommender System","Why Starlink","Movie selector","About us","Contact us"]
@@ -110,14 +127,31 @@ def main():
                    performance of our models properly.")
 
     if page_selection == "Movie selector":
+
+        def add_bg_from_url():
+         st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+        add_bg_from_url() 
+
         st.subheader("Movie Filter")
 
         st.write("This section is based of you using the presented filter base to generate a list of movies:")               
-        image = "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80.open('sunrise.jpg')"
-        st.image(image, caption='Sunrise by the mountains')
+        movie_gallery = "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80.open('sunrise.jpg')"
+        st.image(movie_gallery, caption='movie gallery')
 
 
-        st.write("Please select your favourite genres: ")
+        st.subheader("Please select your favourite genres: ")
         selected_genres = st.multiselect(
           'Please select your favourite genres:',
           ['action','adventure','comedy','drama','fantasy','horror','musicals','mystery'])
@@ -128,13 +162,33 @@ def main():
         st.write('You selected:', selected_genres)
 
 
-        st.write("Please select the desired length of the movie: ") ## I would have to add the Movie.csv
-        st.write("Please select the desired movie ratings : ")
+        st.subheader("Please select the desired length of the movie: ") ## I would have to add the Movie.csv
+
+        start_len = 0     
+        start_len, end_len = st.select_slider(
+        'Select the length of the movie: ',
+         options=['0', '30', '60', '90', '120', '150', '180'],
+         value=('0', '90'))
+        st.write('You selected the length of the movies to be between ',start_len, 'minutes and', end_len,'minutes.')
+
+
+        st.subheader("Please select the desired movie ratings : ")
+        
+        stared_option = st.selectbox(
+        'Select rating of the movie: ', ## 
+        ('1.0', '2.0', '3.0', '4.0', '5.0'))
+        st.write('You selected:', stared_option)
+
+        
+
+    
+
 
 
 
         if st.button('Generate'):
-            st.write('Why hello there')
+            st.write('Your filtered movies')
+
         else:
             st.write('Please try again')
 
@@ -143,7 +197,49 @@ def main():
 
 
     if page_selection == "About us":
+
+        
+        def add_bg_from_url():
+         st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+        add_bg_from_url() 
+
+        st.write("This section is based of you using the presented filter base to generate a list of movies:")               
+        movie_gallery = "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80.open('sunrise.jpg')"
+        st.image(movie_gallery, caption='movie gallery')
+
+
         st.title("About us")
+
+        
+        def add_bg_from_url():
+         st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+        add_bg_from_url() 
+
+
         st.write("We believe that we are only as good as the impact we give.With a nationwide presence,\
                   Starlink positively impacts our client firms successses thanks to our clear vision.\
                   use of technology, clear values, and most importantly our people. Our diverse workforce\
